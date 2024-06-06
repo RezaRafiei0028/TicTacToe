@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tictactoe_7/screen/home_screen.dart';
 
-//189
 void main() {
   runApp(Application());
 }

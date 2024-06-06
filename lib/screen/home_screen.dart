@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   bool isTurnO = true;
   List<String> listOX = ['', '', '', '', '', '', '', '', ''];
-  int filledBoxes = 0; //for draw situation
+  int filledBoxes = 0;
   bool gameHasResult = false;
   int scoreX = 0;
   int scoreO = 0;
@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget getTurn() {
     return Text(
-      isTurnO ? 'Turn O' : 'Turn X', //hamon If else
+      isTurnO ? 'Turn O' : 'Turn X',
       style: TextStyle(
         fontSize: 25,
         color: Colors.white,
@@ -67,7 +67,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget getGridView() {
     return Expanded(
-      //age expand nakonim error mide,mishe az Container ham estefade kard
       child: GridView.builder(
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
@@ -108,12 +107,11 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(
       () {
         if (gameHasResult == true) {
-          return; //baraye hal bug akhari
+          return;
         }
 
         if (listOX[index] != '') {
           return;
-          //return inja be mani ine ke compiler az block in method biron biyad
         }
 
         if (isTurnO) {
@@ -126,15 +124,6 @@ class _HomeScreenState extends State<HomeScreen> {
         isTurnO = !isTurnO;
 
         checkWinner();
-
-        // if (isTurnO && listOX[index] == '') {
-        //   listOX[index] = 'O';
-        //   isTurnO = false;
-        // }
-        // if (!isTurnO && listOX[index] == '') {
-        //   listOX[index] = 'X';
-        //   isTurnO = true;
-        // }
       },
     );
   }
@@ -229,7 +218,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget getScoreBoard() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      //Mishe bejaye khat bala Column haro Expanded kard(to video hamin karo kard)
       children: [
         Column(
           children: [
